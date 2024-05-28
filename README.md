@@ -1,23 +1,23 @@
 # TypeScript React Express ESBuild Boilerplate
 
-Welcome to the TypeScript React Express ESBuild boilerplate, tailored for budding developers learning to craft MERN CRUD applications. However, this boilerplate is also ideal for anyone aiming to switch gears and utilize ESBuild over the conventional webpack.
+Fullstack Twitter clone based off of a boilerplate provided by Covalence
 
 # Table Of Contents
 
--   [Overview](#overview)
--   [Features](#features)
--   [Getting Started](#getting-started)
-    -   [1. Clone the Repository](#1-clone-the-repository)
-    -   [2. Install Dependencies](#2-install-dependencies)
-    -   [3. Running in Development](#3-running-in-development)
--   [Directory Structure](#directory-structure)
-    -   [Top-Level Overview](#top-level-overview)
--   [Building for Production](#building-for-production)
-    -   [1. Building for Production](#1-building-for-production)
-    -   [2. Running in Production](#2-running-in-production)
--   [YouTube Companion Videos](#youtube-companion-videos)
--   [Why ESBuild over Webpack?](#why-esbuild-over-webpack)
--   [Contributions](#contributions)
+- [Overview](#overview)
+- [Features](#features)
+- [Getting Started](#getting-started)
+  - [1. Clone the Repository](#1-clone-the-repository)
+  - [2. Install Dependencies](#2-install-dependencies)
+  - [3. Running in Development](#3-running-in-development)
+- [Directory Structure](#directory-structure)
+  - [Top-Level Overview](#top-level-overview)
+- [Building for Production](#building-for-production)
+  - [1. Building for Production](#1-building-for-production)
+  - [2. Running in Production](#2-running-in-production)
+- [YouTube Companion Videos](#youtube-companion-videos)
+- [Why ESBuild over Webpack?](#why-esbuild-over-webpack)
+- [Contributions](#contributions)
 
 ## Overview
 
@@ -25,34 +25,34 @@ This boilerplate is designed with simplicity and efficiency in mind. It leverage
 
 ## Features
 
--   **React**: For crafting intuitive UIs.
--   **Express**: A minimalist web framework for building the server-side.
--   **TypeScript**: Bringing strong typing to JavaScript, enhancing maintainability and developer experience.
--   **ESBuild**: A revolutionary fast JavaScript bundler and minifier.
--   **Bootstrap SASS**: Empower your projects with the world's most popular CSS framework, now in its SASS variant. Tailor designs seamlessly with variables and mixins.
+- **React**: For crafting intuitive UIs.
+- **Express**: A minimalist web framework for building the server-side.
+- **TypeScript**: Bringing strong typing to JavaScript, enhancing maintainability and developer experience.
+- **ESBuild**: A revolutionary fast JavaScript bundler and minifier.
+- **Bootstrap SASS**: Empower your projects with the world's most popular CSS framework, now in its SASS variant. Tailor designs seamlessly with variables and mixins.
 
-    _Note_: While this boilerplate uses Bootstrap SASS, the flexibility of ESBuild means it's straightforward to switch plugins. For instance, you can easily incorporate PostCSS with TailwindCSS or any other preferred styling solution.
+  _Note_: While this boilerplate uses Bootstrap SASS, the flexibility of ESBuild means it's straightforward to switch plugins. For instance, you can easily incorporate PostCSS with TailwindCSS or any other preferred styling solution.
 
 ## Getting Started
 
 1. **Clone the Repository**
 
-    ```sh
-    git clone https://github.com/covalence-io/ts-react-express-esbuild.git
-    cd ts-react-express-esbuild
-    ```
+   ```sh
+   git clone https://github.com/covalence-io/ts-react-express-esbuild.git
+   cd ts-react-express-esbuild
+   ```
 
 2. **Install Dependencies**
 
-    ```sh
-    npm install
-    ```
+   ```sh
+   npm install
+   ```
 
 3. **Running in Development**
    Start both client and server in development mode:
-    ```sh
-    npm run dev
-    ```
+   ```sh
+   npm run dev
+   ```
 
 ## Directory Structure
 
@@ -92,49 +92,49 @@ tsconfig.json
 
 ### Top-Level Overview
 
--   **`dist/`**: The output directory where your server-side TypeScript files get compiled to JavaScript.
+- **`dist/`**: The output directory where your server-side TypeScript files get compiled to JavaScript.
 
-    -   `server.js`: The compiled server-side entry point. **Note**: This file and the entire `dist/` directory are not tracked on GitHub as they represent compiled production code.
+  - `server.js`: The compiled server-side entry point. **Note**: This file and the entire `dist/` directory are not tracked on GitHub as they represent compiled production code.
 
--   **`esbuild/`**: Houses configuration files for the ESBuild bundler.
+- **`esbuild/`**: Houses configuration files for the ESBuild bundler.
 
-    -   `client.dev.mjs`: ESBuild configuration for client-side development.
-    -   `server.dev.mjs`: ESBuild configuration for server-side development.
-    -   `client.prod.mjs`: ESBuild configuration for client-side production.
-    -   `server.prod.mjs`: ESBuild configuration for server-side production.
+  - `client.dev.mjs`: ESBuild configuration for client-side development.
+  - `server.dev.mjs`: ESBuild configuration for server-side development.
+  - `client.prod.mjs`: ESBuild configuration for client-side production.
+  - `server.prod.mjs`: ESBuild configuration for server-side production.
 
--   **`node_modules/`**: Standard directory for all installed npm packages.
+- **`node_modules/`**: Standard directory for all installed npm packages.
 
--   **`public/`**: Serves static files and the main `index.html` for your React application.
+- **`public/`**: Serves static files and the main `index.html` for your React application.
 
-    -   `static/`: Contains bundled output files for the client side.
-        -   `bundle.js`: Bundled JavaScript for the client. **Note**: The bundled `bundle.js` is not tracked on GitHub as it is a dynamically generated file based on the source code.
-    -   `index.html`: The main HTML file that serves as a shell for your React app.
-    -   `favicon.ico`: The little website icon that appears in your tab/bookmarks.
+  - `static/`: Contains bundled output files for the client side.
+    - `bundle.js`: Bundled JavaScript for the client. **Note**: The bundled `bundle.js` is not tracked on GitHub as it is a dynamically generated file based on the source code.
+  - `index.html`: The main HTML file that serves as a shell for your React app.
+  - `favicon.ico`: The little website icon that appears in your tab/bookmarks.
 
--   **`src/`**: The core of your application's source code, both client-side and server-side.
+- **`src/`**: The core of your application's source code, both client-side and server-side.
 
-    -   `client/`: Contains all client-side React components and styles.
-        -   `styles/`: Directory for all your SCSS files.
-            -   `app.scss`: Main style file for your application.
-        -   `App.tsx`: The main React component for your application.
-        -   `index.tsx`: Client-side entry point.
-        -   `tsconfig.json`: TypeScript configuration specific to the client side.
-    -   `server/`: Houses server-side logic using Express.
-        -   `server.ts`: Entry point for the server.
-        -   `tsconfig.json`: TypeScript configuration specific to the server side.
+  - `client/`: Contains all client-side React components and styles.
+    - `styles/`: Directory for all your SCSS files.
+      - `app.scss`: Main style file for your application.
+    - `App.tsx`: The main React component for your application.
+    - `index.tsx`: Client-side entry point.
+    - `tsconfig.json`: TypeScript configuration specific to the client side.
+  - `server/`: Houses server-side logic using Express.
+    - `server.ts`: Entry point for the server.
+    - `tsconfig.json`: TypeScript configuration specific to the server side.
 
--   **`.gitignore`**: Lists files and directories that should not be tracked by Git. This includes the compiled outputs like those in the `dist/` directory and dynamically generated bundles like `app.js`.
+- **`.gitignore`**: Lists files and directories that should not be tracked by Git. This includes the compiled outputs like those in the `dist/` directory and dynamically generated bundles like `app.js`.
 
--   **`nodemon.json`**: Configuration for Nodemon, a utility that monitors changes in your server code and automatically restarts the server.
+- **`nodemon.json`**: Configuration for Nodemon, a utility that monitors changes in your server code and automatically restarts the server.
 
--   **`package-lock.json`**: Automatically generated file that describes the exact tree that was generated in `node_modules` as a result of running `npm install`.
+- **`package-lock.json`**: Automatically generated file that describes the exact tree that was generated in `node_modules` as a result of running `npm install`.
 
--   **`package.json`**: Lists package dependencies and contains various metadata about the project, like scripts.
+- **`package.json`**: Lists package dependencies and contains various metadata about the project, like scripts.
 
--   **`README.md`**: This very file, offering a guide to the project.
+- **`README.md`**: This very file, offering a guide to the project.
 
--   **`tsconfig.json`**: The root TypeScript configuration file.
+- **`tsconfig.json`**: The root TypeScript configuration file.
 
 ## Building for Production
 
@@ -142,14 +142,14 @@ The scripts for production builds ensure optimized performance for deployment.
 
 1. **Building for Production**
 
-    ```sh
-    npm run build
-    ```
+   ```sh
+   npm run build
+   ```
 
 2. **Running in Production**
-    ```sh
-    npm start
-    ```
+   ```sh
+   npm start
+   ```
 
 ## YouTube Companion Videos
 
