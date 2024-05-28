@@ -22,7 +22,6 @@ router.post("/", async (req, res) => {
 	try {
 		const { user_id, chirp_id } = req.body; // Extract the user ID from the request parameters
 		const mentionedChirps = await db.mentions.insert(user_id, chirp_id);
-
 		res.json(mentionedChirps);
 	} catch (error) {
 		console.error("Error fetching mentioned chirps:", error);

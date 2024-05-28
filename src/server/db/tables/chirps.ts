@@ -2,7 +2,7 @@
 import { SelectQuery, ModifyQuery } from "../queryUtils";
 import type { RowDataPacket } from "mysql2";
 
-export interface Chirp extends RowDataPacket {
+export interface IChirp extends RowDataPacket {
 	id: number;
 	user_id: number;
 	body: string;
@@ -11,11 +11,11 @@ export interface Chirp extends RowDataPacket {
 }
 
 export function getAll() {
-	return SelectQuery<Chirp>("SELECT * FROM chirps;");
+	return SelectQuery<IChirp>("SELECT * FROM chirps;");
 }
 
 export function getOne(id: string) {
-	return SelectQuery<Chirp>("SELECT * FROM chirps WHERE id = ?;", [id]);
+	return SelectQuery<IChirp>("SELECT * FROM chirps WHERE id = ?;", [id]);
 }
 
 export function deleteOne(id: string) {

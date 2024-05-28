@@ -26,6 +26,9 @@ export function deleteMention(user_id: string, chirp_id: string) {
 		[user_id, chirp_id]
 	);
 }
+export function deleteMentionsByChirpId(chirp_id: string) {
+	return ModifyQuery("DELETE FROM mentions WHERE chirp_id = ?;", [chirp_id]);
+}
 
 export function insert(user_id: string, chirp_id: string) {
 	return ModifyQuery("INSERT INTO mentions (user_id, chirp_id) VALUE (?,?);", [
@@ -33,3 +36,4 @@ export function insert(user_id: string, chirp_id: string) {
 		chirp_id,
 	]);
 }
+

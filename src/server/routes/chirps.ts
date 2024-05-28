@@ -47,11 +47,10 @@ router.post("/", async (req, res) => {
 //req.body should look like { id: string }
 router.delete(`/:id`, async (req, res) => {
 	try {
-		console.log(`PARAMS`, req.params);
 		const id = req.params.id;
-		const result = await db.chirps.deleteOne(id);
-		res.json({ message: "Chirp deleted" });
-		console.log(`result`, result);
+		await db.mentions.deleteMentionsByChirpId(id);
+		await db.chirps.deleteOne(id);
+		res.json({ message: "Chirp and it's mentiontions deleted" });
 	} catch (error) {
 		console.log(error);
 		res.status(500).json({ message: "Internal server error", error });
