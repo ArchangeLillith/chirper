@@ -1,6 +1,6 @@
 # TypeScript React Express ESBuild Boilerplate
 
-Fullstack Twitter clone based off of a boilerplate provided by Covalence
+Chirper App
 
 # Table Of Contents
 
