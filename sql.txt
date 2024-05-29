@@ -1,0 +1,60 @@
+CREATE SCHEMA chirper_store;
+USE chirper_store;
+
+CREATE TABLE users (
+    id CHAR(36) NOT NULL,
+    handle VARCHAR(60) UNIQUE NOT NULL,
+    email VARCHAR(60) UNIQUE NOT NULL,
+    created_at TIMESTAMP DEFAULT NOW(),
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE chirps (
+id CHAR(36) NOT NULL UNIQUE,
+user_id CHAR(36),
+body TEXT NOT NULL,
+location VARCHAR(200) NOT NULL,
+created_at TIMESTAMP DEFAULT NOW(),
+FOREIGN KEY (user_id) REFERENCES users(id),
+PRIMARY KEY (id)
+);
+
+CREATE TABLE mentions (
+user_id CHAR(36),
+chirp_id CHAR(36),
+FOREIGN KEY (user_id) REFERENCES users(id),
+FOREIGN KEY (chirp_id) REFERENCES chirps(id)
+);
+
+INSERT INTO users (id, handle, email) VALUE (
+	'1',
+    'lillie',
+    'lillie@test.com');
+    
+    INSERT INTO users (id, handle, email) VALUE (
+	'2',
+    'eli',
+    'eli@test.com');
+    
+    INSERT INTO chirps (id, user_id, body, location) VALUE (
+	'1',
+    '1',
+    'This is a test tweet from Lillie', 
+    'Timbuktwo');
+    
+      INSERT INTO chirps (id, user_id, body, location) VALUE (
+	'2',
+    '2',
+    'This is a test tweet from Eli', 
+    'Paris');
+    
+    SELECT * FROM users;
+    SELECT * FROM chirps;
+    SELECT * FROM mentions;
+    
+    SELECT chirps.* FROM chirps
+		JOIN mentions ON chirps.id = mentions.chirp_id
+		WHERE mentions.user_id = 2;
+    
+ 
+    
